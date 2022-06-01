@@ -1,0 +1,30 @@
+name: CustomMessages
+version: '${project.version}'
+main: dev.jamieisgeek.custommessages.CustomMessages
+api-version: 1.18
+prefix: CustomMessages
+authors: [ JamieIsGeek ]
+description: A plugin to allow users to set custom join and leave messages
+commands:
+  setjoinmessage:
+    description: Change your join message!
+    aliases: setjoinmsg
+    permission: messages.setjoin
+
+  setleavemessage:
+    description: Change your leave message!
+    aliases: setleavemsg
+    permission: messages.setleave
+
+permissions:
+  messages.*:
+    description: Provides the player with every permission for this plugin
+    default: op
+
+  messages.setjoin:
+    description: Lets a user set a join message!
+    default: op
+
+  messages.setleave:
+    description: Lets a user set a leave message!
+    default: op
