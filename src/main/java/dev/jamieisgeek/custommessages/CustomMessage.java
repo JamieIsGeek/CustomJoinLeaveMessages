@@ -11,7 +11,7 @@ public class CustomMessage {
     private static CustomMessage customMessage;
     private final Plugin plugin = CustomMessages.getPlugin(CustomMessages.class);
     private final FileConfiguration config = plugin.getConfig();
-    private static final String prefix = ChatColor.WHITE + "[" + ChatColor.AQUA + "CustomMessages" + ChatColor.WHITE + "] ";
+    private final String prefix = ChatColor.WHITE + "[" + ChatColor.AQUA + "CustomMessages" + ChatColor.WHITE + "] ";
 
 
     public void setJoinMessage(Player p, String[] args) {
@@ -61,7 +61,7 @@ public class CustomMessage {
         }
     }
 
-    public static String getPrefix() {
+    public String getPrefix() {
         return prefix;
     }
 

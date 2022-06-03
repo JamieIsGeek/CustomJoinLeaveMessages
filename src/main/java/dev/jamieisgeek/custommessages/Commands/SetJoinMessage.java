@@ -11,7 +11,7 @@ import org.bukkit.entity.Player;
 public class SetJoinMessage implements CommandExecutor {
 
     CustomMessage customMessage = CustomMessage.getCustomMessage();
-    String prefix = CustomMessage.getPrefix();
+    String prefix = customMessage.getPrefix();
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
