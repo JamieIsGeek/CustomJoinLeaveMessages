@@ -20,16 +20,25 @@ public class Events implements Listener {
     public void onPlayerJoin(PlayerJoinEvent e) {
 
         Player p = e.getPlayer();
-        if(config.contains(p.getUniqueId() + ".joinMessage")) {
-            e.setJoinMessage(customMessage.colourize(Objects.requireNonNull(config.get(p.getUniqueId() + ".joinMessage")).toString()));
+        String joinMessage = customMessage.getJoinMessage(p);
+
+        if(joinMessage.equals(null) || joinMessage.isEmpty()) {
+            return;
+        } else {
+            e.setJoinMessage(joinMessage);
         }
     }
 
     @EventHandler
     public void onPlayerLeave(PlayerQuitEvent e) {
         Player p = e.getPlayer();
-        if(config.contains(p.getUniqueId() + ".leaveMessage")) {
-            e.setQuitMessage(customMessage.colourize(Objects.requireNonNull(config.get(p.getUniqueId() + ".leaveMessage")).toString()));
+
+        String leaveMessage = customMessage.getQuitMessage(p);
+
+        if(leaveMessage.equals(null) || leaveMessage.isEmpty()) {
+            return;
+        } else {
+            e.setQuitMessage(leaveMessage);
         }
     }
 }

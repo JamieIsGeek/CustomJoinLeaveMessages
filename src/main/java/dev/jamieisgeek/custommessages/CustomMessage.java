@@ -15,26 +15,16 @@ public class CustomMessage {
 
 
     public void setJoinMessage(Player p, String[] args) {
-
-        if(argsToString(args).contains("{player}")) {
-            String string = argsToString(args);
-            config.set(p.getUniqueId() + ".joinMessage", playerToName(string, p));
-        } else {
-            config.set(p.getUniqueId() + ".joinMessage", argsToString(args));
-        }
+        String string = argsToString(args);
+        config.set(p.getUniqueId() + ".joinMessage", playerToName(string, p));
         plugin.saveConfig();
         p.sendMessage(prefix + "Set join message!");
     }
 
     public void setLeaveMessage(Player p, String[] args) {
 
-        if(argsToString(args).contains("{player}")) {
-            String string = argsToString(args);
-            config.set(p.getUniqueId() + ".leaveMessage", playerToName(string, p));
-        } else {
-            config.set(p.getUniqueId() + ".leaveMessage", argsToString(args));
-        }
-
+        String string = argsToString(args);
+        config.set(p.getUniqueId() + ".leaveMessage", playerToName(string, p));
         plugin.saveConfig();
         p.sendMessage(prefix + "Set leave message!");
     }
@@ -53,6 +43,22 @@ public class CustomMessage {
             sb.append(arg);
         }
         return sb.toString();
+    }
+
+    public String getJoinMessage(Player p) {
+        if(config.contains(p.getUniqueId() + ".joinMessage") && (!config.get(p.getUniqueId() + ".joinMessage").equals(null))) {
+            return (String) config.get(p.getUniqueId() + ".joinMessage");
+        } else {
+            return null;
+        }
+    }
+
+    public String getQuitMessage(Player p) {
+        if(config.contains(p.getUniqueId() + ".leaveMessage") && (!config.get(p.getUniqueId() + ".leaveMessage").equals(null))) {
+            return (String) config.get(p.getUniqueId() + ".leaveMessage");
+        } else {
+            return null;
+        }
     }
 
     public static String getPrefix() {
