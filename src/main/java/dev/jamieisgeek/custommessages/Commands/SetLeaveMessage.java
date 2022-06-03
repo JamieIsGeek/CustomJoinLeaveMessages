@@ -22,9 +22,9 @@ public class SetLeaveMessage implements CommandExecutor {
             if(p.hasPermission("messages.setleave")) {
 
                 if(args.length == 0) {
-                    customMessage.setLeaveMessage(p, args);
-                } else {
                     p.sendMessage(prefix + ChatColor.RED + "Please provide a leave message!");
+                } else {
+                    customMessage.setLeaveMessage(p, args);
                 }
             } else {
                 p.sendMessage(prefix + ChatColor.RED + "You do not have permission to use this command!");

@@ -14,7 +14,7 @@ public final class CustomMessages extends JavaPlugin {
     @Override
     public void onEnable() {
         saveDefaultConfig();
-        new CustomMessages();
+        new CustomMessage();
         getCommand("setjoinmessage").setExecutor(new SetJoinMessage());
         getCommand("setleavemessage").setExecutor(new SetLeaveMessage());
         getServer().getPluginManager().registerEvents(new Events(), this);
@@ -33,7 +33,7 @@ public final class CustomMessages extends JavaPlugin {
 
         logger.info("");
         logger.info("=+=+=+=+=+=+=+=+=+=+=+=+=+=+");
-        logger.info("CustomMessage has Enabled!");
+        logger.info("CustomMessage has Disabled!");
         logger.info("Version 1.0");
         logger.info("=+=+=+=+=+=+=+=+=+=+=+=+=+=+");
         logger.info("");

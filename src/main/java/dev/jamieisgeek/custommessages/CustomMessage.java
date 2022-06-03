@@ -42,7 +42,7 @@ public class CustomMessage {
         return prefix;
     }
 
-    public void SetCustomMessage() {
+    public CustomMessage() {
         customMessage = this;
     }
 
