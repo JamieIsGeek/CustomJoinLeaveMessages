@@ -15,19 +15,36 @@ public class CustomMessage {
 
 
     public void setJoinMessage(Player p, String[] args) {
-        config.set(p.getUniqueId() + ".joinMessage", argsToString(args));
+
+        if(argsToString(args).contains("{player}")) {
+            String string = argsToString(args);
+            config.set(p.getUniqueId() + ".joinMessage", playerToName(string, p));
+        } else {
+            config.set(p.getUniqueId() + ".joinMessage", argsToString(args));
+        }
         plugin.saveConfig();
         p.sendMessage(prefix + "Set join message!");
     }
 
     public void setLeaveMessage(Player p, String[] args) {
-        config.set(p.getUniqueId() + ".leaveMessage", argsToString(args));
+
+        if(argsToString(args).contains("{player}")) {
+            String string = argsToString(args);
+            config.set(p.getUniqueId() + ".leaveMessage", playerToName(string, p));
+        } else {
+            config.set(p.getUniqueId() + ".leaveMessage", argsToString(args));
+        }
+
         plugin.saveConfig();
         p.sendMessage(prefix + "Set leave message!");
     }
 
     public String colourize(String preColour) {
         return ChatColor.translateAlternateColorCodes('&', preColour);
+    }
+
+    private String playerToName(String string, Player p) {
+        return string.replace("{player}", p.getName());
     }
 
     private @NotNull String argsToString(String[] args) {
