@@ -47,7 +47,8 @@ public class CustomMessage {
 
     public String getJoinMessage(Player p) {
         if(config.contains(p.getUniqueId() + ".joinMessage") && (!config.get(p.getUniqueId() + ".joinMessage").equals(null))) {
-            return (String) config.get(p.getUniqueId() + ".joinMessage");
+            String preColour = (String) config.get(p.getUniqueId() + ".joinMessage");
+            return colourize(preColour);
         } else {
             return null;
         }
@@ -55,7 +56,8 @@ public class CustomMessage {
 
     public String getQuitMessage(Player p) {
         if(config.contains(p.getUniqueId() + ".leaveMessage") && (!config.get(p.getUniqueId() + ".leaveMessage").equals(null))) {
-            return (String) config.get(p.getUniqueId() + ".leaveMessage");
+            String preColour = (String) config.get(p.getUniqueId() + ".leaveMessage");
+            return colourize(preColour);
         } else {
             return null;
         }
