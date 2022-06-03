@@ -22,9 +22,7 @@ public class Events implements Listener {
         Player p = e.getPlayer();
         String joinMessage = customMessage.getJoinMessage(p);
 
-        if(joinMessage.equals(null) || joinMessage.isEmpty()) {
-            return;
-        } else {
+        if(!joinMessage.equals(null) || !joinMessage.isEmpty()) {
             e.setJoinMessage(joinMessage);
         }
     }
@@ -35,9 +33,7 @@ public class Events implements Listener {
 
         String leaveMessage = customMessage.getQuitMessage(p);
 
-        if(leaveMessage.equals(null) || leaveMessage.isEmpty()) {
-            return;
-        } else {
+        if(!leaveMessage.equals(null) || !leaveMessage.isEmpty()) {
             e.setQuitMessage(leaveMessage);
         }
     }
