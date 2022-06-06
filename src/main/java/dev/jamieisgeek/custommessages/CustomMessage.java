@@ -55,7 +55,7 @@ public class CustomMessage {
     }
 
     public String getQuitMessage(Player p) {
-        if(config.contains(p.getUniqueId() + ".leaveMessage") && (!config.get(p.getUniqueId() + ".leaveMessage").equals(null))) {
+        if(config.contains(p.getUniqueId() + ".leaveMessage") && (config.get(p.getUniqueId() + ".leaveMessage") != null)) {
             String preColour = (String) config.get(p.getUniqueId() + ".leaveMessage");
             return colourize(preColour);
         } else {
