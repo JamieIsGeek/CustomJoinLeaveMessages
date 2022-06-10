@@ -30,7 +30,6 @@ public class Events implements Listener {
     @EventHandler
     public void onPlayerLeave(PlayerQuitEvent e) {
         Player p = e.getPlayer();
-
         String leaveMessage = customMessage.getQuitMessage(p);
 
         if(!leaveMessage.equals(null) || !leaveMessage.isEmpty()) {

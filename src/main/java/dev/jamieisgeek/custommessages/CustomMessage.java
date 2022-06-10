@@ -18,7 +18,7 @@ public class CustomMessage {
         String string = argsToString(args);
         config.set(p.getUniqueId() + ".joinMessage", playerToName(string, p));
         plugin.saveConfig();
-        p.sendMessage(prefix + "Set join message!");
+        p.sendMessage(prefix + "Join message set!");
     }
 
     public void setLeaveMessage(Player p, String[] args) {
@@ -26,7 +26,7 @@ public class CustomMessage {
         String string = argsToString(args);
         config.set(p.getUniqueId() + ".leaveMessage", playerToName(string, p));
         plugin.saveConfig();
-        p.sendMessage(prefix + "Set leave message!");
+        p.sendMessage(prefix + "Leave message set!");
     }
 
     public String colourize(String preColour) {
